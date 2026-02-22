@@ -1,0 +1,21 @@
+{
+  "name": "Login",
+  "rank": "auntit17717346647581",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/auth/login",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [],
+    "body": "{\n    // \"email\":\"bgb@mail.com\",\n    // \"password\":\"bhavik@1234\"\n  \"email\":\"Vv@gmail.com\",\n  \"password\":\"bhavik@1234\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Create Teacher",
+  "rank": "auntit17717365396721",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/register_teacher",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [],
+    "body": "{\n  \"full_name\": \"VedVyas\",\n  \"email\": \"Vvyas@gmail.com\",\n  \"password\": \"bhavik@1234\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

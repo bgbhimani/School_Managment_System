@@ -1,0 +1,29 @@
+{
+  "name": "All Classes",
+  "rank": "aw",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/all_classes",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "GET",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1771744995265,
+        "key": "authorization",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MTc2NjY2N30.wokMXAl64skLqJa4EgeJhaLknw4-T5OfNJlwW77XusE",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "contentType": "text/plain",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

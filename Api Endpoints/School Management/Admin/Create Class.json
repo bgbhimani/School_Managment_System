@@ -1,0 +1,21 @@
+{
+  "name": "Create Class ",
+  "rank": "av",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/create_class",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [],
+    "body": "{\n  \"standard\": 5,\n  \"section\": \"C\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

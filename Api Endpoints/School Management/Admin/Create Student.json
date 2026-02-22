@@ -1,0 +1,30 @@
+{
+  "name": "Create Student",
+  "rank": "auu",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/register_student",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1771745276053,
+        "key": "authorization",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MTc2NjY2N30.wokMXAl64skLqJa4EgeJhaLknw4-T5OfNJlwW77XusE",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n  \"full_name\": \"Ram\",\n  \"email\": \"Ram@gmail.com\",\n  \"password\": \"bhavik@1234\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "is_Auth",
+  "rank": "av",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/auth/is_auth",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1771737457760,
+        "key": "authorization",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MTc1OTAyMX0.GKFLB73TtSN28mmZxfms5uXBQ5hwOAl4nbwxhU1iB5g",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n    \"email\":\"bgb@mail.com\",\n    \"password\":\"bhavik@1234\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}
