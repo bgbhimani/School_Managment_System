@@ -1,0 +1,30 @@
+{
+  "name": "Assign Class",
+  "rank": "av",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/assign_class",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1771952566702,
+        "key": "authorization",
+        "value": "jwt ",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n  \"teacher_id\": \"7c1db348-ab3d-46d4-a21d-a2c717f89cae\",\n  \"class_id\": \"00563513-9b5a-45e7-a950-dc755c913e7c\",\n  \"is_class_teacher\": false\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

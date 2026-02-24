@@ -9,7 +9,7 @@ class ClassResponse(BaseModel):
     section : str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
     
 class ClassResponseWithID(ClassResponse):
     id: uuid.UUID
@@ -17,4 +17,4 @@ class ClassResponseWithID(ClassResponse):
     section : str
 
     class Config:
-        orm_mode = True
+        from_attributes = True

@@ -1,0 +1,30 @@
+{
+  "name": "Assign Subject",
+  "rank": "aur",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/assign_subject",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1771952543807,
+        "key": "authorization",
+        "value": "jwt ",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n  \"teacher_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"subject_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

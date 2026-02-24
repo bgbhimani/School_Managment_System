@@ -1,6 +1,6 @@
 {
   "name": "Create Subject",
-  "rank": "avV",
+  "rank": "ax",
   "request": {
     "type": "http",
     "url": "http://127.0.0.1:8000/admin/create_subject",

@@ -2,12 +2,12 @@ from fastapi import APIRouter, Depends, status, Request
 from sqlalchemy.orm import Session
 from uuid import UUID
 from app.database import get_db
-from app.schemas.Users import UserResponse, UserResponseWithID,TeacherCreate, StudentCreate
+from app.schemas.Users import UserResponse, UserResponseWithID,TeacherCreate, StudentCreate, TeacherAssignSubject, TeacherAssignSubjectResponse, TeacherAssignClass, TeacherAssignClassResponse
 from app.schemas.Class import ClassCreate, ClassResponse, ClassResponseWithID
 from app.schemas.Subject import SubjectCreate, SubjectResponse, SubjectResponseWithID
 from app.services.admin import create_teacher,  create_student, create_class, create_subject
-from app.services.admin import all_classes, all_users, all_subjects
-from app.services.admin import delete_class, delete_subject, delete_user
+from app.services.admin import all_classes, all_users, all_subjects, assign_sub_to_teacher, assign_class_to_teacher
+from app.services.admin import delete_class, delete_subject, delete_user, teacher_of_class
 
 
 admin_router = APIRouter()
@@ -30,6 +30,10 @@ def get_all_users(request:Request, db:Session=Depends(get_db)):
 def remove_user(user_id: UUID, request:Request, db:Session=Depends(get_db)):
     return delete_user(user_id=user_id,db=db,request=request)
 
+
+
+
+
 # Class Related Services
 @admin_router.post('/create_class',response_model=ClassResponse,status_code=status.HTTP_201_CREATED)
 def add_class(classData: ClassCreate, request:Request, db: Session=Depends(get_db)):
@@ -42,6 +46,9 @@ def get_all_classes(request:Request, db:Session=Depends(get_db)):
 @admin_router.delete('/delete_class/{class_id}', status_code=status.HTTP_204_NO_CONTENT)
 def remove_class(class_id: UUID, request:Request, db:Session=Depends(get_db)):
     return delete_class(class_id=class_id, db=db, request=request)
+
+
+
 
 # Subject Related Services
 @admin_router.post('/create_subject',response_model=SubjectResponse,status_code=status.HTTP_201_CREATED)
@@ -56,3 +63,20 @@ def get_all_subjects(request:Request, db:Session=Depends(get_db)):
 @admin_router.delete('/delete_subject/{subject_id}', status_code=status.HTTP_204_NO_CONTENT)
 def remove_subject(subject_id: UUID, request:Request, db:Session=Depends(get_db)):
     return delete_subject(subject_id=subject_id, db=db, request=request)
+
+
+
+
+# Teacher-Class-Subject Relations
+
+@admin_router.post('/assign_subject',response_model=TeacherAssignSubjectResponse,status_code=status.HTTP_201_CREATED)
+def assign_subject(teacher_data: TeacherAssignSubject,request: Request,  db: Session=Depends(get_db)):
+    return assign_sub_to_teacher(teacher_data=teacher_data,db=db,request=request)
+
+@admin_router.post('/assign_class', response_model=TeacherAssignClassResponse, status_code=status.HTTP_201_CREATED)
+def assign_class(teacher_data: TeacherAssignClass, request: Request, db: Session=Depends(get_db)):
+    return assign_class_to_teacher(teacher_data=teacher_data, db=db, request=request)
+
+@admin_router.get('/teacher_of_class/{class_id}', response_model=TeacherAssignClassResponse, status_code=status.HTTP_200_OK)
+def teacher_of_the_class(class_id: UUID, request: Request, db: Session=Depends(get_db)):
+    return teacher_of_class(class_id=class_id, db=db, request=request)

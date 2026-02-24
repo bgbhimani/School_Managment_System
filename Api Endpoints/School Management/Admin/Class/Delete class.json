@@ -1,6 +1,6 @@
 {
   "name": "Delete class",
-  "rank": "avG",
+  "rank": "auV",
   "request": {
     "type": "http",
     "url": "http://127.0.0.1:8000/admin/delete_class/",

@@ -10,7 +10,7 @@ class SubjectResponse(BaseModel):
     name: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class SubjectResponseWithID(SubjectResponse):
@@ -18,4 +18,4 @@ class SubjectResponseWithID(SubjectResponse):
     name: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True

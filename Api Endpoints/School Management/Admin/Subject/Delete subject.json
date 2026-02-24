@@ -1,6 +1,6 @@
 {
   "name": "Delete subject",
-  "rank": "avx",
+  "rank": "aw",
   "request": {
     "type": "http",
     "url": "http://127.0.0.1:8000/admin/delete_class/",

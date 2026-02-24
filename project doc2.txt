@@ -20,8 +20,9 @@
 (Removed update & delete)
 
 🔁 Teacher-Class Mapping
-Assign teacher to class
-View teachers of class
+- Assign subject to Teacher
+- Assign teacher to class
+- View teachers of class
 (Removed remove + class teacher flag for now)
 
 📢 Notice Management
