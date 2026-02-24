@@ -39,7 +39,6 @@ View test results by class
 View student performance
 
 
-
 👩‍🏫 2️⃣ TEACHER – What Teacher Can Do
 🧑‍🎓 Student Management (Limited)
 View students of assigned classes
@@ -87,43 +86,3 @@ View attendance percentage
 📝 Test Results
 View own test results
 View subject-wise performance
-
-🧠 API Structure Recommendation
-Organize routers like this:
-routers/
-    auth.py
-    admin.py
-    teacher.py
-    student.py
-    notice.py
-    attendance.py
-    test.py
-Then protect them using:
-@router.post("/create-teacher")
-def create_teacher(
-    data: TeacherCreate,
-    current_user: User = Depends(get_current_admin)
-)
-
-🔐 Role Guard Plan
-You should create:
-get_current_user()
-get_current_admin()
-get_current_teacher()
-get_current_student()
-So your endpoints become clean and secure.
-
-💡 Suggested Method Naming Convention
-For Admin:
-create_teacher()
-update_student()
-assign_teacher_to_class()
-
-For Teacher:
-create_attendance()
-add_test_marks()
-create_notice()
-
-For Student:
-view_my_results()
-view_my_attendance()

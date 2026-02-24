@@ -1,5 +1,6 @@
 from fastapi import HTTPException, Request
 from sqlalchemy.orm import Session 
+from uuid import UUID
 from sqlalchemy import func
 
 from app.services.auth import register, require_roles
@@ -24,6 +25,17 @@ def all_users(db:Session, request:Request):
     users = db.query(User).all()
     return users
 
+def delete_user(user_id: UUID, db:Session, request:Request):
+    require_roles(['admin'],request=request, db=db)
+    user = db.query(User).filter(User.id == user_id).first()
+    
+    if not user:
+        raise HTTPException(status_code=404, detail=f"Class with id {user_id} not found!!")
+    
+    db.delete(user)
+    db.commit()
+    
+    return {"detail": f"User {user.full_name} deleted successfully!! "}
 
 ## class Related Services
 
@@ -54,6 +66,20 @@ def all_classes( db:Session, request:Request):
     classes = db.query(Class).all()
     return classes
 
+def delete_class(class_id: UUID, db:Session, request:Request):
+    require_roles(['admin'], request=request, db=db)
+    
+    classtoremove = db.query(Class).filter(Class.id == class_id).first()
+    
+    if not classtoremove:
+        raise HTTPException(status_code=404, detail=f"Class with id {class_id} not found!!")
+    
+    db.delete(classtoremove)
+    db.commit()
+    
+    return {"detail": f"Class with id {class_id} deleted successfully!! "}
+
+
 
 ## sybject related services
 
@@ -61,7 +87,6 @@ def all_subjects(db:Session, request:Request):
     require_roles(['admin'], request=request,db=db)
     subjects = db.query(Subject).all()
     return subjects
-
 
 def create_subject(newSubject: SubjectCreate, db:Session, request:Request):
     require_roles(['admin'], request=request,db=db)
@@ -82,3 +107,18 @@ def create_subject(newSubject: SubjectCreate, db:Session, request:Request):
     db.refresh(new_subject)
     
     return new_subject
+
+def delete_subject(subject_id: UUID, db:Session, request:Request):
+    require_roles(['admin'], request=request,db=db)
+    
+    subject = db.query(Subject).filter(Subject.id == subject_id).first()
+    
+    if not subject:
+        raise HTTPException(status_code=404, detail=f"Subject with id {subject_id} not found!!")
+    
+    db.delete(subject)
+    db.commit()
+    
+    return {"detail": f"Subject with id {subject_id} deleted successfully!!"}
+
+

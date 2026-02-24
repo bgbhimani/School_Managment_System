@@ -1,6 +1,6 @@
 {
   "name": "All Classes",
-  "rank": "aw",
+  "rank": "auz",
   "request": {
     "type": "http",
     "url": "http://127.0.0.1:8000/admin/all_classes",

@@ -1,0 +1,62 @@
+🛡️ 1️⃣ ADMIN – Final Responsibilities
+👤 User Management
+- Create Teacher (user + teacher profile)
+- Create Student (user + student profile)
+- Delete Teacher
+- Delete Student
+- View all users
+(Removed update + complex management)
+
+🏫 Class Management
+- Create Class
+- View Classes
+- Delete Classes
+(Removed update & delete for simplicity)
+
+📘 Subject Management
+- Create Subject
+- View Subjects
+- Delete Subjects
+(Removed update & delete)
+
+🔁 Teacher-Class Mapping
+Assign teacher to class
+View teachers of class
+(Removed remove + class teacher flag for now)
+
+📢 Notice Management
+Create notice (global or class)
+Delete notice
+View all notices
+(Removed update)
+
+📊 Attendance Reports
+View attendance by class
+
+👩‍🏫 2️⃣ TEACHER – Final Responsibilities
+🏫 Classes
+View assigned classes
+View students in those classes
+
+📢 Notice
+Create notice (class only)
+View notices
+(No update/delete for now)
+
+📅 Attendance
+Create attendance session
+Mark attendance for students
+View attendance of their classes
+(No edit after submission — simple)
+
+🎓 3️⃣ STUDENT – Final Responsibilities
+👤 Profile
+View own profile
+(No update for now)
+
+📢 Notice
+View notices (global + class)
+
+📅 Attendance
+View own attendance
+View attendance percentage

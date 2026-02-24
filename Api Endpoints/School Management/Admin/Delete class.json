@@ -1,27 +1,18 @@
 {
-  "name": "All Subjects ",
-  "rank": "avO",
+  "name": "Delete class",
+  "rank": "avG",
   "request": {
     "type": "http",
-    "url": "http://127.0.0.1:8000/admin/all_subjects",
+    "url": "http://127.0.0.1:8000/admin/delete_class/",
     "scripts": {
       "preRequest": "",
       "postResponse": ""
     },
-    "method": "GET",
-    "queryParams": [
-      {
-        "id": 1771940811627,
-        "key": "au",
-        "value": "",
-        "isEnabled": true,
-        "description": "",
-        "dataType": "string"
-      }
-    ],
+    "method": "DELETE",
+    "queryParams": [],
     "headers": [
       {
-        "id": 1771744995265,
+        "id": 1771940484731,
         "key": "authorization",
         "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MTk2MDAxMn0.FNTtT73-DWq-4f5tq_stlB9JpuF7Zzhpx4zOKXrQs7E",
         "isEnabled": true,
@@ -29,7 +20,8 @@
         "dataType": "string"
       }
     ],
-    "contentType": "text/plain",
+    "body": "{\n  \"full_name\": \"VedVyas\",\n  \"email\": \"Vvyas@gmail.com\",\n  \"password\": \"bhavik@1234\"\n}",
+    "contentType": "application/json",
     "auth": {
       "currentAuthType": "INHERIT",
       "authConfigStore": {}

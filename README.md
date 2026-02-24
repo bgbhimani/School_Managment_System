@@ -18,3 +18,6 @@ uv add -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+### ER Diagram
+![ER Diagram](/ERDiagram.png)
+
