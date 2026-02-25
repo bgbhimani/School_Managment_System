@@ -1,0 +1,30 @@
+{
+  "name": "assign_class_to_student",
+  "rank": "auntit17720141553621",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/assign_class_to_student",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1772014194528,
+        "key": "authorization",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MjAzNDE3M30.1MEww7avRcZWSCdh5dthDYHvx4JkqDTesc3RZHxea20",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n  \"student_id\": \"aaad10a6-ed5d-4791-bd69-f5de8efd53a8\",\n  \"class_id\": \"00563513-9b5a-45e7-a950-dc755c913e7c\",\n  \"roll_number\": 0\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

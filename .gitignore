@@ -8,5 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
-"project doc".txt
+project doc.txt
 dbmanager.py
+project doc2.txt

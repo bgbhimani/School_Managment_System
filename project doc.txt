@@ -22,10 +22,10 @@ Delete Subject
 - View subjects
 
 🔁 Teacher-Class Mapping
-Assign teacher to class
+- Assign teacher to class
 Remove teacher from class
 Mark teacher as class teacher
-View class teachers
+- View class teachers
 
 📢 Notice Management
 Create notice (global / class / standard)

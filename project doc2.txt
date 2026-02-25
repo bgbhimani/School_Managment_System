@@ -23,12 +23,13 @@
 - Assign subject to Teacher
 - Assign teacher to class
 - View teachers of class
+- Assign class to Student
 (Removed remove + class teacher flag for now)
 
 📢 Notice Management
-Create notice (global or class)
-Delete notice
-View all notices
+- Create notice (global or class)
+- Delete notice
+- View all notices
 (Removed update)
 
 📊 Attendance Reports

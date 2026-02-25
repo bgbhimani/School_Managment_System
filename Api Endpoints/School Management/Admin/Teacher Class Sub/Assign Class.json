@@ -14,7 +14,7 @@
       {
         "id": 1771952566702,
         "key": "authorization",
-        "value": "jwt ",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MTk3NDg5Nn0.p_wzeOMcR5KncoYaRuys1go-m0aHkJTlnzQP_lc5Y1c",
         "isEnabled": true,
         "description": "",
         "dataType": "string"

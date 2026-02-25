@@ -2,12 +2,15 @@ from fastapi import APIRouter, Depends, status, Request
 from sqlalchemy.orm import Session
 from uuid import UUID
 from app.database import get_db
-from app.schemas.Users import UserResponse, UserResponseWithID,TeacherCreate, StudentCreate, TeacherAssignSubject, TeacherAssignSubjectResponse, TeacherAssignClass, TeacherAssignClassResponse
+
+from app.schemas.Users import UserResponse, UserResponseWithID,TeacherCreate, StudentCreate, TeacherAssignSubject, TeacherAssignSubjectResponse, TeacherAssignClass, TeacherAssignClassResponse, TeacherListItem, StudentAssignClassResponse, StudentAssignClass, StudentListItem
+from app.schemas.Notice import NoticeCreate, NoticeResponse, NoticeResponseWithID
 from app.schemas.Class import ClassCreate, ClassResponse, ClassResponseWithID
 from app.schemas.Subject import SubjectCreate, SubjectResponse, SubjectResponseWithID
 from app.services.admin import create_teacher,  create_student, create_class, create_subject
-from app.services.admin import all_classes, all_users, all_subjects, assign_sub_to_teacher, assign_class_to_teacher
-from app.services.admin import delete_class, delete_subject, delete_user, teacher_of_class
+from app.services.admin import all_classes, all_users, all_subjects, assign_sub_to_teacher, assign_class_to_teacher, all_teachers , all_student
+from app.services.admin import delete_class, delete_subject, delete_user, teacher_of_class, assing_class_to_student
+from app.services.admin import create_notice, delete_notice, all_notices
 
 
 admin_router = APIRouter()
@@ -30,8 +33,13 @@ def get_all_users(request:Request, db:Session=Depends(get_db)):
 def remove_user(user_id: UUID, request:Request, db:Session=Depends(get_db)):
     return delete_user(user_id=user_id,db=db,request=request)
 
+@admin_router.get('/all_teachers', response_model=list[TeacherListItem], status_code=status.HTTP_200_OK)
+def get_all_teachers(request:Request, db:Session=Depends(get_db)):
+    return all_teachers(db=db, request=request)
 
-
+@admin_router.get('/all_students', response_model=list[StudentListItem])
+def get_all_students(request: Request, db: Session = Depends(get_db)):
+    return all_student(db=db, request=request)
 
 
 # Class Related Services
@@ -80,3 +88,21 @@ def assign_class(teacher_data: TeacherAssignClass, request: Request, db: Session
 @admin_router.get('/teacher_of_class/{class_id}', response_model=TeacherAssignClassResponse, status_code=status.HTTP_200_OK)
 def teacher_of_the_class(class_id: UUID, request: Request, db: Session=Depends(get_db)):
     return teacher_of_class(class_id=class_id, db=db, request=request)
+
+## Student- Class Relation
+
+@admin_router.post('/assign_class_to_student', response_model=StudentAssignClassResponse,status_code=status.HTTP_201_CREATED)
+def assign_class_student(student_data:StudentAssignClass, request: Request, db:Session=Depends(get_db)):
+    return assing_class_to_student(student_data=student_data, request=request, db=db)
+
+@admin_router.post('/notice',response_model=NoticeResponse,status_code=status.HTTP_201_CREATED)
+def add_notice(noticedata:NoticeCreate,request:Request ,db:Session=Depends(get_db)):
+    return create_notice(noticedata=noticedata, request=request, db=db)
+
+@admin_router.delete('/notice/{notice_id}',status_code=status.HTTP_202_ACCEPTED)
+def remove_notice(notice_id:UUID, request:Request, db:Session=Depends(get_db)):
+    return delete_notice(notice_id=notice_id, db=db,request=request)
+
+@admin_router.get('/notice', response_model=list[NoticeResponseWithID], status_code=status.HTTP_200_OK)
+def get_all_notices(request:Request, db:Session=Depends(get_db)):
+    return all_notices(db=db, request=request)
