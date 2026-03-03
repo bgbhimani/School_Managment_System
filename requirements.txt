@@ -13,7 +13,6 @@ greenlet==3.3.2
 h11==0.16.0
 httptools==0.7.1
 idna==3.11
-psycopg2==2.9.11
 psycopg2-binary==2.9.11
 pwdlib==0.3.0
 pycparser==3.0
