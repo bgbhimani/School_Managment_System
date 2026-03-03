@@ -64,7 +64,15 @@ def login(userdata:UserLogin,db:Session):
     print("Type of user id: ",type(user.id))
     token = jwt.encode({'_id':str(user.id), 'full_name':user.full_name, 'exp':expiry_time},key=SECRET_KEY,algorithm=ALGORITHM)
     
-    return {'token':token}
+    return {
+        'token': token,
+        'user': {
+            'id': user.id,
+            'full_name': user.full_name,
+            'email': user.email,
+            'role': user.role
+        }
+    }
 
 def is_authenticated(request:Request, db :Session):
     try:

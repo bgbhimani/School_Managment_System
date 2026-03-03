@@ -1,0 +1,30 @@
+{
+  "name": "Create Notice",
+  "rank": "aud",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/notice",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "POST",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1772029690050,
+        "key": "authorization",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MjA1MTE4NX0.Fx_QbbCoPhJJI77DvLEUlxPUFfJxRZfMYA-b-JWci_M",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"created_by\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"class_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"standard\": 0\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

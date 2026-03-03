@@ -1,0 +1,30 @@
+{
+  "name": "Delete Notice ",
+  "rank": "av",
+  "request": {
+    "type": "http",
+    "url": "http://127.0.0.1:8000/admin/notice/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "scripts": {
+      "preRequest": "",
+      "postResponse": ""
+    },
+    "method": "DELETE",
+    "queryParams": [],
+    "headers": [
+      {
+        "id": 1771940484731,
+        "key": "authorization",
+        "value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJhMWZmYTQ0Zi0zMWY1LTQ0MmYtYTk2OS0xNDYxMmM4ZDI1MTMiLCJmdWxsX25hbWUiOiJCaGF2aWsgQmhpbWFuaSIsImV4cCI6MTc3MjA1MTE4NX0.Fx_QbbCoPhJJI77DvLEUlxPUFfJxRZfMYA-b-JWci_M",
+        "isEnabled": true,
+        "description": "",
+        "dataType": "string"
+      }
+    ],
+    "body": "{\n  \"full_name\": \"VedVyas\",\n  \"email\": \"Vvyas@gmail.com\",\n  \"password\": \"bhavik@1234\"\n}",
+    "contentType": "application/json",
+    "auth": {
+      "currentAuthType": "INHERIT",
+      "authConfigStore": {}
+    }
+  }
+}

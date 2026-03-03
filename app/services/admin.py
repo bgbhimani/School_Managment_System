@@ -353,7 +353,7 @@ from app.models.models import Notice
 from app.schemas.Notice import NoticeCreate, NoticeResponse
 
 def create_notice(noticedata:NoticeCreate, db:Session, request:Request ):
-    require_roles(['admin,teacher'],request=request,db=db)
+    require_roles(['admin','teacher'],request=request,db=db)
     # Exactly one of class_id or standard must be provided (mutually exclusive)
     has_class = bool(noticedata.class_id)
     has_standard = bool(noticedata.standard)
